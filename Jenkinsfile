@@ -5,8 +5,13 @@ pipeline {
             steps {
                 script {
                     echo "Intitialize pipeline: ${Data}"
-                    ls
-                    pwd
+                    sh ls
+                    sh pwd
+                    if (env.BRANCH == 'master') {
+                        echo "Master Branch"
+                    } else {
+                        echo "Unknown Branch"
+                    }
                 }
             }
         }
