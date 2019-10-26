@@ -5,6 +5,8 @@ pipeline {
             steps {
                 script {
                     echo "Intitialize pipeline: ${Data}"
+                    ls
+                    pwd
                 }
             }
         }
