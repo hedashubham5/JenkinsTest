@@ -5,6 +5,7 @@ pipeline {
             steps {
                 script {
                     echo "Intitialize pipeline: ${Data}"
+                    sh "echo '${Info}' > hosts"
                     sh "ansible-playbook -i inventory -e password=${password} -e user=${user} main.yaml"
                     if (env.BRANCH == 'master') {
                         echo "Master Branch ${NODE_NAME}"
