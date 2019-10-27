@@ -25,7 +25,7 @@ def getVariableString(){
     command=""
     def variableList = ["SERVERNAME=100", "SERVERVALUE=200"]
     variableList.each { item ->
-        command += "-e ${item}"
+        command += "-e ${item} "
     }
     return command
 }
