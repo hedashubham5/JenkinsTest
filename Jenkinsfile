@@ -3,7 +3,6 @@ pipeline {
     stages {
         stage("Intialize Pipeline"){
             steps {
-                script {
                     echo "Intitialize pipeline: ${Data}"
                     sh "echo '${Info}' > hosts"
                     sh "ansible-playbook -i inventory -e password=${password} -e user=${user} main.yaml"
@@ -12,7 +11,6 @@ pipeline {
                     } else {
                         echo "Unknown Branch ${NODE_NAME}"
                     }
-                }
             }
         }
     }
