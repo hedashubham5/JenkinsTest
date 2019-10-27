@@ -27,4 +27,5 @@ def getVariableString(){
     variableList.each { item ->
         command += "-e ${item}"
     }
+    return command
 }
