@@ -23,7 +23,8 @@ pipeline {
 @NonCPS
 def getVariableString(){
     command=""
-    ["SERVERNAME=100", "SERVERVALUE=200"].each { item ->
+    def variableList = ["SERVERNAME=100", "SERVERVALUE=200"]
+    variableList.each { item ->
         command += "-e ${item}"
     }
 }
